@@ -89,7 +89,7 @@ export class FetchSmart {
     options: RequestInit & { timeout?: number },
     retry?: number,
     retryDelay?: number,
-    exponentialDelay: boolean = true,
+    exponentialDelay = true,
     retryCondition?: () => boolean
   ): Promise<FetchResponse<unknown>> {
     let attempts = 0;
@@ -220,7 +220,7 @@ export class FetchSmart {
 
     const stream = new ReadableStream({
       async start(controller) {
-        while (true) {
+        while (!reader.closed) {
           const { done, value } = await reader.read();
           
           if (done) {
@@ -250,12 +250,14 @@ export class FetchSmart {
     let loaded = 0;
     const createProgressEvent = this.createProgressEvent.bind(this);
 
+    const stream = body instanceof ReadableStream ? body : new Response(body).body;
+    if (!stream) {
+      throw new Error('Failed to create readable stream');
+    }
+    const reader = stream.getReader();
+
     return new ReadableStream({
       start(controller) {
-        const reader = body instanceof ReadableStream 
-          ? body.getReader() 
-          : new Response(body).body!.getReader();
-
         return pump();
 
         function pump(): Promise<void> {
@@ -324,7 +326,7 @@ export class FetchSmart {
       headers['Content-Type'] = 'application/json';
     } else if (form) {
       requestBody = form;
-      headers['Content-Type'] = undefined as any;
+      delete headers['Content-Type'];
     } else if (body) {
       requestBody = typeof body === 'object' ? JSON.stringify(body) : body as BodyInit;
     }

@@ -36,8 +36,8 @@
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@types/jest": "^29.5.12",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.0.0",
@@ -50,7 +50,7 @@
     "standard-version": "^9.3.0",
     "ts-jest": "^29.1.2",
     "typedoc": "^0.25.8",
-    "typescript": "^5.3.3"
+    "typescript": "5.1.6"
   },
   "config": {
     "commitizen": {
