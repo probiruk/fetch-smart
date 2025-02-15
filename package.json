@@ -1,6 +1,6 @@
 {
   "name": "fetch-smart",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A powerful and feature-rich HTTP client for browser and Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
