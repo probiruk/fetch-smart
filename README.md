@@ -1,4 +1,4 @@
-# FetcSmart
+# FetchSmart
 
 [![npm version](https://badge.fury.io/js/fetch-smart.svg)](https://badge.fury.io/js/fetch-smart)
 [![Build Status](https://github.com/probiruk/fetch-smart/workflows/CI/badge.svg)](https://github.com/probiruk/fetch-smart/actions)
