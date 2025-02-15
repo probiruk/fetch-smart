@@ -1,0 +1,27 @@
+# Source
+src/
+tests/
+examples/
+docs/
+
+# Config files
+.eslintrc
+.prettierrc
+.gitignore
+.npmignore
+jest.config.js
+tsconfig.json
+.github/
+.husky/
+coverage/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.* 
